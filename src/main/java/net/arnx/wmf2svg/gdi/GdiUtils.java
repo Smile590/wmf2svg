@@ -12,6 +12,14 @@ public final class GdiUtils {
 		}
 		
 		try {
+			if (chars.length == 1) {
+				if (chars[0] == -124) {
+					return "" + '\u2264';
+				}
+				if (chars[0] == -123) {
+					return "" + '\u2265';
+				}
+			}
 			str = new String(chars, 0, length, getCharset(charset));
 		} catch (UnsupportedEncodingException e) {
 			try {
