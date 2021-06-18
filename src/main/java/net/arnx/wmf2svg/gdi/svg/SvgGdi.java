@@ -1554,7 +1554,51 @@ public class SvgGdi implements Gdi {
 				return;
 			}
 		}
-
+if("Euclid Math Two".equals(font.getFaceName())){
+			char[] ca = str.toCharArray();
+			for (int i = 0; i < ca.length; i++) {
+				switch (ca[i]){
+					case '€':ca[i]='\u22D6';break;
+//					case '�':ca[i]='\u22D7';break;
+					case '‚':ca[i]='\u22DC';break;
+					case 'ƒ':ca[i]='\u22DD';break;
+					case '„':ca[i]='\u2A7D';break;
+					case '…':ca[i]='\u2A7E';break;
+					case '†':ca[i]='\u2266';break;
+					case '‡':ca[i]='\u2267';break;
+					case 'ˆ':ca[i]='\u2272';break;
+					case '‰':ca[i]='\u2273';break;
+					case 'Š':ca[i]='\u008A';break;
+					case '‹':ca[i]='\u008B';break;
+					case 'Œ':ca[i]='\u22D8';break;
+//					case '⋗':ca[i]='\u22D9';break;
+//					case '⋗':ca[i]='\u226E';break;
+					case 'Ž':ca[i]='\u226F';break;
+//					case '⋗':ca[i]='\uEA34';break;
+					case '‘':ca[i]='\u0091';break;
+					case '’':ca[i]='\u2270';break;
+					case '“':ca[i]='\u2271';break;
+					case '”':ca[i]='\u0094';break;
+					case '•':ca[i]='\u0095';break;
+					case '–':ca[i]='\u2270';break;
+					case '—':ca[i]='\u2271';break;
+					case '˜':ca[i]='\u0098';break;
+					case '™':ca[i]='\u2269';break;
+					case 'š':ca[i]='\u2268';break;
+					case '›':ca[i]='\u2269';break;
+					case 'œ':ca[i]='\u009C';break;
+//					case '�':ca[i]='\u009D';break;
+					case 'ž':ca[i]='\u22E6';break;
+					case 'Ÿ':ca[i]='\u22E7';break;
+					case ' ':ca[i]='\u00A0';break;
+					case '¡':ca[i]='\u00A1';break;
+					case '¢':ca[i]='\u00A2';break;
+					case '£':ca[i]='\u2276';break;
+					case '¤':ca[i]='\u2277';break;
+				}
+			}
+			str = String.valueOf(ca);
+		}
 		elem.appendChild(doc.createTextNode(str));
 	}
 
